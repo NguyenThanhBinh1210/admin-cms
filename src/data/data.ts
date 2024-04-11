@@ -10,11 +10,35 @@ const columns = [
   { name: 'THỜI GIAN', uid: 'createdAt' },
   { name: 'HÀNH ĐỘNG', uid: 'actions' }
 ]
+const columnsNapTru = [
+  { name: 'ID', uid: 'id', sortable: true },
+  { name: 'SỐ ĐIỆN THOẠI', uid: 'phone' },
+  { name: 'LÝ DO', uid: 'lydo' },
+  { name: 'SỐ TIỀN NẠP / RÚT', uid: 'money', sortable: true },
+  { name: 'THỜI GIAN', uid: 'createdAt' }
+]
+const columnsAccount = [
+  { name: 'ID', uid: 'id', sortable: true },
+  { name: 'SỐ ĐIỆN THOẠI', uid: 'phone' },
+  { name: 'SỐ DƯ TÀI KHOẢN', uid: 'money' },
+  { name: 'LOẠI THÔNG BÁO', uid: 'thongbao' },
+  { name: 'THỜI GIAN', uid: 'createdAt' },
+  { name: 'HÀNH ĐỘNG', uid: 'actions' }
+]
 
 const statusOptions = [
   { name: 'Đã duyệt', uid: 'active' },
   { name: 'Từ chối', uid: 'paused' },
   { name: 'Chờ duyệt', uid: 'vacation' }
+]
+const notifys = [
+  { name: 'Sai thông tin liên kết ví', uid: 'sai-thong-tin-lien-ket-vi' },
+  { name: 'Rút tiền vi phạm hợp đồng vay. Đóng băng ví vay', uid: 'rut-tien-vi-pham-hop-dong-vay' },
+  { name: 'Điểm tín dụng không đủ', uid: 'dien-tin-dung-khong-du' },
+  { name: 'Số tiền rút vi phạm hợp đồng Vay. Vui lòng liên hệ CSKH', uid: 'so-tien-rut-vi-pham-hop-dong-vay' },
+  { name: 'Đóng băng khoản Vay ', uid: 'dong-bang-khoan-vay' },
+  { name: 'Hồ sơ bất cập yêu cầu đổi STK nhận tiền', uid: 'ho-so-bat-cap' },
+  { name: 'Lệnh rút đã được tạo. Vui lòng nhận khoản Vay sau 10 phút', uid: 'lenh-rut-da-duoc-tao' }
 ]
 
 const users = [
@@ -620,4 +644,232 @@ const users = [
   }
 ]
 
-export { columns, users, statusOptions }
+const naprut = [
+  {
+    id: 1,
+    money: 123123123,
+    phone: '0354343434',
+    lydo: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam quis perspiciatis quisquam officia porro itaque pariatur, aspernatur culpa eaque excepturi sunt, delectus veritatis deserunt. Illo, iusto? Repellendus minus reiciendis ab.',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'nap'
+  },
+  {
+    id: 2,
+    money: 123123123,
+    phone: '0354343434',
+    lydo: 'sdfsdf',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'nap'
+  },
+  {
+    id: 3,
+    money: 123123123,
+    phone: '0354343434',
+    lydo: '',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'nap'
+  },
+  {
+    id: 4,
+    money: 123123123,
+    phone: '0354343434',
+    lydo: '',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'nap'
+  },
+  {
+    id: 5,
+    money: 123123123,
+    phone: '0354343434',
+    lydo: '',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'nap'
+  },
+  {
+    id: 6,
+    money: 123123123,
+    phone: '0354343434',
+    lydo: '',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'tru'
+  },
+  {
+    id: 7,
+    money: 123123123,
+    phone: '0354343434',
+    lydo: '',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'nap'
+  },
+  {
+    id: 8,
+    money: 123123123,
+    phone: '0354343434',
+    lydo: '',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'nap'
+  },
+  {
+    id: 9,
+    money: 123123123,
+    phone: '0354343434',
+    lydo: '',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'nap'
+  },
+  {
+    id: 10,
+    money: 123123123,
+    phone: '0354343434',
+    lydo: '',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'nap'
+  },
+  {
+    id: 11,
+    money: 123123123,
+    phone: '0354343434',
+    lydo: '',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'nap'
+  },
+  {
+    id: 12,
+    money: 123123123,
+    phone: '0354343434',
+    lydo: '',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'nap'
+  },
+  {
+    id: 13,
+    money: 123123123,
+    phone: '0354343434',
+    lydo: '',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'nap'
+  },
+  {
+    id: 14,
+    money: 123123123,
+    phone: '0354343434',
+    lydo: '',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'tru'
+  }
+]
+const account = [
+  {
+    id: 1,
+    money: 123123123,
+    phone: '0354343434',
+    lydo: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam quis perspiciatis quisquam officia porro itaque pariatur, aspernatur culpa eaque excepturi sunt, delectus veritatis deserunt. Illo, iusto? Repellendus minus reiciendis ab.',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'sai-thong-tin-lien-ket-vi'
+  },
+  {
+    id: 2,
+    money: 123123123,
+    phone: '0354343434',
+    lydo: 'sdfsdf',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'sai-thong-tin-lien-ket-vi'
+  },
+  {
+    id: 3,
+    money: 123123123,
+    phone: '0354343434',
+    lydo: '',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'sai-thong-tin-lien-ket-vi'
+  },
+  {
+    id: 4,
+    money: 123123123,
+    phone: '0354343434',
+    lydo: '',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'sai-thong-tin-lien-ket-vi'
+  },
+  {
+    id: 5,
+    money: 123123123,
+    phone: '0354343434',
+    lydo: '',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'sai-thong-tin-lien-ket-vi'
+  },
+  {
+    id: 6,
+    money: 123123123,
+    phone: '0354343434',
+    lydo: '',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'lenh-rut-da-duoc-tao'
+  },
+  {
+    id: 7,
+    money: 123123123,
+    phone: '0354343434',
+    lydo: '',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'sai-thong-tin-lien-ket-vi'
+  },
+  {
+    id: 8,
+    money: 123123123,
+    phone: '0354343434',
+    lydo: '',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'sai-thong-tin-lien-ket-vi'
+  },
+  {
+    id: 9,
+    money: 123123123,
+    phone: '0354343434',
+    lydo: '',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'sai-thong-tin-lien-ket-vi'
+  },
+  {
+    id: 10,
+    money: 123123123,
+    phone: '0354343434',
+    lydo: '',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'sai-thong-tin-lien-ket-vi'
+  },
+  {
+    id: 11,
+    money: 123123123,
+    phone: '0354343434',
+    lydo: '',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'sai-thong-tin-lien-ket-vi'
+  },
+  {
+    id: 12,
+    money: 123123123,
+    phone: '0354343434',
+    lydo: '',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'sai-thong-tin-lien-ket-vi'
+  },
+  {
+    id: 13,
+    money: 123123123,
+    phone: '0354343434',
+    lydo: '',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'nap'
+  },
+  {
+    id: 14,
+    money: 123123123,
+    phone: '0354343434',
+    lydo: '',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'lenh-rut-da-duoc-tao'
+  }
+]
+export { columns, users, statusOptions, columnsNapTru, naprut, notifys, account, columnsAccount }

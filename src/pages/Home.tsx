@@ -1,5 +1,6 @@
 import { Tabs, Tab, Card, CardBody } from '@nextui-org/react'
 import Account from '~/modules/Home/Account'
+import InfoNap from '~/modules/Home/NotifyNap'
 import InfoVay from '~/modules/Home/InfoVay'
 import NapTru from '~/modules/Home/NapTru'
 
@@ -31,8 +32,7 @@ const Home = () => {
         <Tab key='thong-bao-nap-tien' title='Thông báo nạp tiền'>
           <Card className='rounded'>
             <CardBody>
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-              laborum.
+              <InfoNap />
             </CardBody>
           </Card>
         </Tab>

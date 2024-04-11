@@ -25,6 +25,14 @@ const columnsAccount = [
   { name: 'THỜI GIAN', uid: 'createdAt' },
   { name: 'HÀNH ĐỘNG', uid: 'actions' }
 ]
+const columnsThongBaoNap = [
+  { name: 'ID', uid: 'id', sortable: true },
+  { name: 'NỘI DUNG', uid: 'description' },
+  { name: 'SỐ ĐIỆN THOẠI', uid: 'phone' },
+  { name: 'LOẠI THÔNG BÁO', uid: 'status' },
+  { name: 'THỜI GIAN', uid: 'createdAt' },
+  { name: 'HÀNH ĐỘNG', uid: 'actions' }
+]
 
 const statusOptions = [
   { name: 'Đã duyệt', uid: 'active' },
@@ -872,4 +880,115 @@ const account = [
     status: 'lenh-rut-da-duoc-tao'
   }
 ]
-export { columns, users, statusOptions, columnsNapTru, naprut, notifys, account, columnsAccount }
+const thongbaonap = [
+  {
+    id: 1,
+    phone: '0354343434',
+    description: '',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'success'
+  },
+  {
+    id: 2,
+    phone: '0354343434',
+    description: 'RÚT TIỀN THÀNH CÔNG',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'success'
+  },
+  {
+    id: 3,
+    phone: '0354343434',
+    description: '',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'success'
+  },
+  {
+    id: 4,
+    phone: '0354343434',
+    description: '',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'success'
+  },
+  {
+    id: 5,
+    phone: '0354343434',
+    description: '',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'success'
+  },
+  {
+    id: 6,
+    phone: '0354343434',
+    description: '',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'deny'
+  },
+  {
+    id: 7,
+    phone: '0354343434',
+    description: '',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'success'
+  },
+  {
+    id: 8,
+    phone: '0354343434',
+    description: '',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'success'
+  },
+  {
+    id: 9,
+    phone: '0354343434',
+    description: '',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'success'
+  },
+  {
+    id: 10,
+    phone: '0354343434',
+    description: '',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'success'
+  },
+  {
+    id: 11,
+    phone: '0354343434',
+    description: '',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'success'
+  },
+  {
+    id: 12,
+    phone: '0354343434',
+    description: '',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'success'
+  },
+  {
+    id: 13,
+    phone: '0354343434',
+    description: 'RÚT TIỀN THÀNH CÔNG',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'deny'
+  },
+  {
+    id: 14,
+    phone: '0354343434',
+    lydo: '',
+    createdAt: '2022-09-26T08:36:15.037Z',
+    status: 'deny'
+  }
+]
+export {
+  columns,
+  users,
+  statusOptions,
+  columnsThongBaoNap,
+  thongbaonap,
+  columnsNapTru,
+  naprut,
+  notifys,
+  account,
+  columnsAccount
+}

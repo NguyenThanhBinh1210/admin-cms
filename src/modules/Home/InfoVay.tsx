@@ -281,6 +281,7 @@ const InfoVay = () => {
       </div>
     )
   }, [page, pages])
+
   return (
     <>
       {/* <div className='flex gap-5 mb-5'>

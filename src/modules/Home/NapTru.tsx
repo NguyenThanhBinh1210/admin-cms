@@ -24,6 +24,7 @@ import React from 'react'
 import { SearchIcon } from '~/assets/icons/SearchIcon'
 import { columnsNapTru, naprut } from '~/data/data'
 import { formatCurrency, formatDate } from '~/utils/utils'
+import { ImageUpload } from '../ImageUpload'
 
 const INITIAL_VISIBLE_COLUMNS = ['id', 'phone', 'money', 'lydo', 'createdAt']
 
@@ -71,9 +72,8 @@ const NapTru = () => {
       case 'money':
         return (
           <div
-            className={`font-semibold ${naprut.status === 'nap' && 'text-green-600'} ${
-              naprut.status === 'tru' && 'text-red-600'
-            }`}
+            className={`font-semibold ${naprut.status === 'nap' && 'text-green-600'} ${naprut.status === 'tru' && 'text-red-600'
+              }`}
           >
             {naprut.status === 'nap' && '+'} {naprut.status === 'tru' && '-'} {formatCurrency(naprut.money)}
           </div>
@@ -157,6 +157,7 @@ const NapTru = () => {
                 {type === 'nap' && 'Nạp tiền'} {type === 'tru' && 'Trừ tiền'}
               </ModalHeader>
               <ModalBody>
+                <ImageUpload></ImageUpload>
                 <Input
                   type='number'
                   label={type === 'nap' ? 'Số tiền cần nạp' : 'Số tiền cần trừ'}

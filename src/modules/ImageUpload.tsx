@@ -117,7 +117,7 @@ export const ImageUpload: React.FC = () => {
               <div className='h-[400px] w-full'>
                 <img className='h-full object-cover w-full rounded-lg' src={imagesActive || images[0]} />
               </div>
-              <div className='flex gap-2 flex-wrap'>
+              <div className='grid grid-cols-4 md:grid-cols-6 gap-2 flex-wrap'>
                 {images
                   .filter((item) => item !== imagesActive || item !== '')
                   .map((item, index) => (

@@ -1,11 +1,10 @@
 import { useDisclosure } from '@nextui-org/react'
 import { useEffect, useState } from 'react'
 import { Modal, ModalContent } from '@nextui-org/react'
-
 export const ImageUpload: React.FC = () => {
   const [images, setImages] = useState<string[]>([])
+  const [imagesActive, setImageActive] = useState<string>(images[0])
   const [uploadProgress, setUploadProgress] = useState<number>(0)
-
   const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault()
     const files = e.dataTransfer.files
@@ -115,43 +114,21 @@ export const ImageUpload: React.FC = () => {
         <ModalContent>
           {() => (
             <div className='grid gap-2 p-2'>
-              <div>
-                <img
-                  className='h-auto max-w-full rounded-lg'
-                  src='https://flowbite.s3.amazonaws.com/docs/gallery/featured/image.jpg'
-                />
+              <div className='h-[400px] w-full'>
+                <img className='h-full object-cover w-full rounded-lg' src={imagesActive || images[0]} />
               </div>
-              <div className='grid grid-cols-5 gap-2'>
-                <div>
-                  <img
-                    className='h-auto max-w-full rounded-lg'
-                    src='https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg'
-                  />
-                </div>
-                <div>
-                  <img
-                    className='h-auto max-w-full rounded-lg'
-                    src='https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg'
-                  />
-                </div>
-                <div>
-                  <img
-                    className='h-auto max-w-full rounded-lg'
-                    src='https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg'
-                  />
-                </div>
-                <div>
-                  <img
-                    className='h-auto max-w-full rounded-lg'
-                    src='https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg'
-                  />
-                </div>
-                <div>
-                  <img
-                    className='h-auto max-w-full rounded-lg'
-                    src='https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg'
-                  />
-                </div>
+              <div className='flex gap-2 flex-wrap'>
+                {images
+                  .filter((item) => item !== imagesActive || item !== '')
+                  .map((item, index) => (
+                    <div
+                      onClick={() => setImageActive(item)}
+                      className='border rounded-lg hover:shadow-lg transition-all cursor-pointer'
+                      key={index}
+                    >
+                      <img className='h-auto w-[100px] max-w-full rounded-lg' src={item} />
+                    </div>
+                  ))}
               </div>
             </div>
           )}

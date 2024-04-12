@@ -93,7 +93,10 @@ export const ImageUpload: React.FC = () => {
           {images.map((image, index) => (
             <div
               key={index}
-              onClick={onOpen}
+              onClick={() => {
+                onOpen()
+                setImageActive(image)
+              }}
               className='cursor-pointer hover:shadow-md transition-all border w-20 h-20 border-gray-300 rounded-md overflow-hidden'
             >
               <img src={image} alt={`Preview ${index}`} className='w-full h-full object-cover' />

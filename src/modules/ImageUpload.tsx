@@ -123,10 +123,10 @@ export const ImageUpload: React.FC = () => {
                   .map((item, index) => (
                     <div
                       onClick={() => setImageActive(item)}
-                      className='border rounded-lg hover:shadow-lg transition-all cursor-pointer'
+                      className='w-[100px] h-[100px] border rounded-lg hover:shadow-lg transition-all cursor-pointer'
                       key={index}
                     >
-                      <img className='h-auto w-[100px] max-w-full rounded-lg' src={item} />
+                      <img className='h-full object-cover w-full rounded-lg' src={item} />
                     </div>
                   ))}
               </div>

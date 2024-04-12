@@ -9,9 +9,17 @@ interface Props {
   children: React.ReactNode
   showSidebar: any
   setShowSidebar: any
+  showSidebarMobile: any
+  setShowSidebarMobile: any
 }
 
-export const NavbarWrapper = ({ showSidebar, setShowSidebar, children }: Props) => {
+export const NavbarWrapper = ({
+  showSidebar,
+  showSidebarMobile,
+  setShowSidebarMobile,
+  setShowSidebar,
+  children
+}: Props) => {
   return (
     <div className='relative flex  flex-col flex-1 overflow-y-auto overflow-x-hidden'>
       <Navbar
@@ -21,8 +29,11 @@ export const NavbarWrapper = ({ showSidebar, setShowSidebar, children }: Props) 
           wrapper: 'w-full max-w-full'
         }}
       >
-        <NavbarContent className=''>
+        <NavbarContent className='hidden md:flex'>
           <BurguerButton onShow={() => setShowSidebar(!showSidebar)} />
+        </NavbarContent>
+        <NavbarContent className='md:hidden'>
+          <BurguerButton onShow={() => setShowSidebarMobile(!showSidebarMobile)} />
         </NavbarContent>
 
         <NavbarContent justify='end' className='w-fit data-[justify=end]:flex-grow-0'>
@@ -31,7 +42,7 @@ export const NavbarWrapper = ({ showSidebar, setShowSidebar, children }: Props) 
           </NavbarContent>
         </NavbarContent>
       </Navbar>
-      <div className='p-6'>{children}</div>
+      <div className='p-2 md:p-6'>{children}</div>
     </div>
   )
 }

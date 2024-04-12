@@ -9,14 +9,15 @@ import { SidebarMenu } from './SidebarMenu'
 import { useLocation } from 'react-router-dom'
 import { HomeIcon } from '../icons/sidebar/HomeIcon'
 import { BalanceIcon } from '../icons/sidebar/BalanceIcon'
+import { SettingsIcon } from '../icons/sidebar/SettingsIcon'
 
 export const SidebarWrapper = ({ showSidebar }: any) => {
   const pathname = useLocation().pathname
 
   return (
-    <aside className={`z-10   ${showSidebar ? 'w-[250px]' : 'w-[70px]'}  transition-all`}>
+    <aside className={`z-10   ${showSidebar ? ' w-[250px]' : 'w-[70px]'}  transition-all`}>
       <div>
-        <div className={`px-2  ${!showSidebar ? 'flex justify-center' : ''}`}>
+        <div className={`pl-4 `}>
           <User
             name={<div className={`${showSidebar ? 'block' : 'hidden'}  transition-all`}>Admin</div>}
             description={<div className={`${showSidebar ? 'block' : 'hidden'}  transition-all`}>Online</div>}
@@ -29,37 +30,65 @@ export const SidebarWrapper = ({ showSidebar }: any) => {
           <div className={Sidebar.Body()}>
             <SidebarItem
               showSidebar={showSidebar}
-              title={showSidebar ? 'Thống kê' : ''}
+              title={'Thống kê'}
               icon={<HomeIcon />}
               isActive={pathname === '/'}
               href='/'
             />
-            <SidebarMenu title={showSidebar ? 'Chức năng' : ''}>
-              <CollapseItems
+            <div className={` flex flex-col gap-4 ${!showSidebar ? 'block' : 'hidden'}`}>
+              <SidebarItem
                 showSidebar={showSidebar}
+                title={''}
                 icon={<BalanceIcon />}
-                items={['Danh sách nhân viên', 'Danh sách CSKH']}
-                title={showSidebar ? 'Nhân viên' : ''}
+                isActive={pathname === '/staff'}
+                href='/'
               />
-              <CollapseItems
+              <SidebarItem
                 showSidebar={showSidebar}
+                title={''}
                 icon={<BalanceIcon />}
-                items={['Khoản vay đang chờ']}
-                title={showSidebar ? 'Tài khoản' : ''}
+                isActive={pathname === '/account'}
+                href='/'
               />
-              <CollapseItems
+              <SidebarItem
                 showSidebar={showSidebar}
+                title={''}
                 icon={<BalanceIcon />}
-                items={['Quản lý tài khoản', 'Quản lý vai trò', 'Quản lý quyền hạn']}
-                title={showSidebar ? 'Tài khoản Admin' : ''}
+                isActive={pathname === '/admin'}
+                href='/'
               />
-              <CollapseItems
+              <SidebarItem
                 showSidebar={showSidebar}
-                icon={<BalanceIcon />}
-                items={['Quản lý thông báo', 'Cấu hình Website']}
-                title={showSidebar ? 'Cấu hình' : ''}
+                title={''}
+                icon={<SettingsIcon />}
+                isActive={pathname === '/setting'}
+                href='/'
               />
-            </SidebarMenu>
+            </div>
+            <div className={` overflow-hidden  ${showSidebar ? '   w-[234px] block' : '   w-0 hidden'}`}>
+              <SidebarMenu title={showSidebar ? 'Chức năng' : ''}>
+                <CollapseItems
+                  icon={<BalanceIcon />}
+                  items={['Danh sách nhân viên', 'Danh sách CSKH']}
+                  title={showSidebar ? 'Nhân viên' : ''}
+                />
+                <CollapseItems
+                  icon={<BalanceIcon />}
+                  items={['Khoản vay đang chờ']}
+                  title={showSidebar ? 'Tài khoản' : ''}
+                />
+                <CollapseItems
+                  icon={<BalanceIcon />}
+                  items={['Quản lý tài khoản', 'Quản lý vai trò', 'Quản lý quyền hạn']}
+                  title={showSidebar ? 'Tài khoản Admin' : ''}
+                />
+                <CollapseItems
+                  icon={<SettingsIcon />}
+                  items={['Quản lý thông báo', 'Cấu hình Website']}
+                  title={showSidebar ? 'Cấu hình' : ''}
+                />
+              </SidebarMenu>
+            </div>
           </div>
         </div>
       </div>

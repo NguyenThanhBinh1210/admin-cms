@@ -29,6 +29,10 @@ import { SearchIcon } from '~/assets/icons/SearchIcon'
 import { VerticalDotsIcon } from '~/assets/icons/VerticalDotsIcon'
 import { columns, statusOptions, users } from '~/data/data'
 import { capitalize, formatCurrency, formatDate } from '~/utils/utils'
+import { CardBalance1 } from './CardBalance1'
+import { CardBalance2 } from './CardBalance2'
+import { CardBalance3 } from './CardBalance3'
+import { CardBalance4 } from './CardBalance4'
 
 const INITIAL_VISIBLE_COLUMNS = ['name', 'role', 'status', 'actions', 'codevay', 'phone', 'createdAt']
 const statusColorMap: Record<string, ChipProps['color']> = {
@@ -194,8 +198,8 @@ const InfoVay = () => {
   const topContent = React.useMemo(() => {
     return (
       <div className='flex flex-col gap-4'>
-        <div className='flex justify-between gap-3 items-end'>
-          <div className='flex items-center gap-x-3 w-full'>
+        <div className='md:flex justify-between gap-3 items-end'>
+          <div className='flex items-center mb-3 md:mb-0  gap-x-3 w-full'>
             <Input
               isClearable
               className='w-full sm:max-w-[44%]'
@@ -206,11 +210,11 @@ const InfoVay = () => {
               onValueChange={onSearchChange}
             />
             <Button color='primary'>Tìm kiếm</Button>
-            <Button variant='light' className='text-blue-700 font-medium'>
+            <Button variant='light' className='text-blue-700 font-medium md:block hidden'>
               Làm mới
             </Button>
           </div>
-          <div className='flex gap-3'>
+          <div className='flex gap-3 justify-end md:justify-start'>
             <Dropdown>
               <DropdownTrigger className='hidden sm:flex'>
                 <Button endContent={<ChevronDownIcon className='text-small' />} variant='flat'>
@@ -279,7 +283,7 @@ const InfoVay = () => {
   }, [page, pages])
   return (
     <>
-      <div className='flex gap-5 mb-5'>
+      {/* <div className='flex gap-5 mb-5'>
         <div className='p-2 py-5 text-center rounded border w-[200px]'>
           <p className='font-bold'>Tổng số khoản vay</p>
           <p>15065</p>
@@ -296,6 +300,12 @@ const InfoVay = () => {
           <p className='font-bold'>Khoản vay từ chối</p>
           <p>15065</p>
         </div>
+      </div> */}
+      <div className='grid md:grid-cols-2 mb-5 grid-cols-1 2xl:grid-cols-4 gap-5  justify-center w-full'>
+        <CardBalance1 />
+        <CardBalance2 />
+        <CardBalance3 />
+        <CardBalance4 />
       </div>
       <Table
         aria-label='Example table with custom cells, pagination and sorting'

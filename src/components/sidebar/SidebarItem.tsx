@@ -25,13 +25,19 @@ export const SidebarItem = ({ icon, title, isActive, href = '', showSidebar }: P
         className={clsx(
           isActive ? 'bg-primary-100 [&_svg_path]:fill-primary-500' : 'hover:bg-default-100',
           `flex  ${
-            showSidebar ? 'gap-2 ' : 'justify-center'
+            showSidebar ? 'gap-2 ' : ''
           }  w-full min-h-[44px] h-full items-center px-3.5 rounded-xl cursor-pointer transition-all duration-150 active:scale-[0.98]`
         )}
         // onClick={handleClick}
       >
         {icon}
-        <span className='text-default-900'>{title}</span>
+        <span
+          className={`text-default-900  overflow-hidden  ${
+            showSidebar ? 'w-[66px] opacity-100 transition-all' : 'w-0 opacity-0 text-[0px]'
+          }`}
+        >
+          {title}
+        </span>
       </div>
     </Link>
   )

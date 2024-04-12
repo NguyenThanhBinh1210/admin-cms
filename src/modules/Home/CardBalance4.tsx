@@ -3,7 +3,7 @@ import { Community } from '~/components/icons/Community'
 
 export const CardBalance4 = () => {
   return (
-    <Card className='xl:max-w-sm bg-danger rounded-xl shadow-md px-3 w-full'>
+    <Card className='xl:max-w-sm bg-danger-400 rounded-xl shadow-md px-3 w-full'>
       <CardBody className='py-5'>
         <div className='flex gap-2.5'>
           <Community />
@@ -14,7 +14,7 @@ export const CardBalance4 = () => {
         </div>
         <div className='flex gap-2.5 py-2 items-center'>
           <span className='text-white text-xl font-semibold'>$3,910</span>
-          <span className='text-danger text-xs'>- 4.5%</span>
+          {/* <span className='text-danger text-xs'>- 4.5%</span> */}
         </div>
         {/* <div className='flex items-center gap-6'>
           <div>

@@ -144,6 +144,36 @@ const NotifyNap = () => {
         </Button>
         <div className='mt-4'></div>
         <div className='mt-4'>
+          <h2 className='mb-3 text-2xl text-gray-600'>Thông báo mặc định</h2>
+          <Table
+            aria-label='Example table with custom cells, pagination and sorting'
+            isHeaderSticky
+            bottomContentPlacement='outside'
+            classNames={{
+              wrapper: 'max-h-[382px]'
+            }}
+            topContentPlacement='outside'
+          >
+            <TableHeader columns={headerColumns}>
+              {(column) => (
+                <TableColumn
+                  key={column.uid}
+                  align={column.uid === 'actions' ? 'center' : 'start'}
+                  allowsSorting={column.sortable}
+                >
+                  {column.name}
+                </TableColumn>
+              )}
+            </TableHeader>
+            <TableBody emptyContent={'No users found'} items={[items[0]]}>
+              {(item) => (
+                <TableRow key={item.id}>{(columnKey) => <TableCell>{renderCell(item, columnKey)}</TableCell>}</TableRow>
+              )}
+            </TableBody>
+          </Table>
+        </div>
+        <div className='mt-6'>
+          <h2 className='mb-3 text-2xl text-gray-600'>Danh sách thông báo</h2>
           <Table
             aria-label='Example table with custom cells, pagination and sorting'
             isHeaderSticky

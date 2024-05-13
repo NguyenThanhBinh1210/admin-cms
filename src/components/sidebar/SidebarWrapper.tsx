@@ -13,7 +13,7 @@ import { SettingsIcon } from '../icons/sidebar/SettingsIcon'
 
 export const SidebarWrapper = ({ showSidebar }: any) => {
   const pathname = useLocation().pathname
-
+  console.log(pathname);
   return (
     <aside className={`z-10   ${showSidebar ? ' w-[250px]' : 'w-[70px]'}  transition-all`}>
       <div>
@@ -68,23 +68,26 @@ export const SidebarWrapper = ({ showSidebar }: any) => {
             <div className={` overflow-hidden  ${showSidebar ? '   w-[234px] block' : '   w-0 hidden'}`}>
               <SidebarMenu title={showSidebar ? 'Chức năng' : ''}>
                 <CollapseItems
+                  isActive={pathname.includes('cskh')}
                   icon={<BalanceIcon />}
-                  items={['Danh sách nhân viên', 'Danh sách CSKH']}
+                  items={[{ title: 'Danh sách nhân viên', path: '/cskh/manage' }, { title: 'Danh sách CSKH', path: '/cskh/user' }]}
                   title={showSidebar ? 'Nhân viên' : ''}
                 />
                 <CollapseItems
+                  isActive={pathname.includes('loan')}
+
                   icon={<BalanceIcon />}
-                  items={['Khoản vay đang chờ']}
+                  items={[{ title: 'Khoản vay đang chờ', path: '/loan/manage' }]}
                   title={showSidebar ? 'Tài khoản' : ''}
                 />
                 <CollapseItems
                   icon={<BalanceIcon />}
-                  items={['Quản lý tài khoản', 'Quản lý vai trò', 'Quản lý quyền hạn']}
+                  items={[{ title: 'Quản lý tài khoản', path: '/' }, { title: 'Quản lý vai trò', path: '/' }, { title: 'Quản lý quyền hạn', path: '/' }]}
                   title={showSidebar ? 'Tài khoản Admin' : ''}
                 />
                 <CollapseItems
                   icon={<SettingsIcon />}
-                  items={['Quản lý thông báo', 'Cấu hình Website']}
+                  items={[{ title: 'Quản lý thông báo', path: '/' }, { title: 'Cấu hình Website', path: '/' }]}
                   title={showSidebar ? 'Cấu hình' : ''}
                 />
               </SidebarMenu>

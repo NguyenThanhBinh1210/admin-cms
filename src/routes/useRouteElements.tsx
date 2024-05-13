@@ -7,6 +7,9 @@ import LoginLayout from '~/layouts/LoginLayout'
 import HomeLayout from '~/layouts/HomeLayout'
 import Home from '~/pages/Home'
 import { useContext } from 'react'
+import Manager from '~/pages/CSKH/Manager'
+import User from '~/pages/CSKH/User'
+import Manage from '~/pages/Loan/Manage'
 
 const useRouteElements = () => {
   function ProtecedRoute() {
@@ -52,7 +55,55 @@ const useRouteElements = () => {
               <Home />
             </HomeLayout>
           )
-        }
+        },
+        {
+          path: '/cskh/manage',
+          element: (
+            <HomeLayout>
+              <Manager />
+            </HomeLayout>
+          )
+        },
+        {
+          path: '/cskh/user',
+          element: (
+            <HomeLayout>
+              <User />
+            </HomeLayout>
+          )
+        },
+        {
+          path: '/loan/manage',
+          element: (
+            <HomeLayout>
+              <Manage />
+            </HomeLayout>
+          )
+        },
+        {
+          path: '/user/manage',
+          element: (
+            <HomeLayout>
+              <Manage />
+            </HomeLayout>
+          )
+        },
+        {
+          path: '/user/role',
+          element: (
+            <HomeLayout>
+              <Manage />
+            </HomeLayout>
+          )
+        },
+        {
+          path: '/user/permission',
+          element: (
+            <HomeLayout>
+              <Manage />
+            </HomeLayout>
+          )
+        },
       ]
     },
     {

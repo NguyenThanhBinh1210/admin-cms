@@ -27,7 +27,6 @@ export const SidebarItem = ({ icon, title, isActive, href = '', showSidebar }: P
           `flex  ${showSidebar ? 'gap-2 ' : ''
           }  w-full min-h-[44px] h-full items-center px-3.5 rounded-xl cursor-pointer transition-all duration-150 active:scale-[0.98]`
         )}
-      // onClick={handleClick}
       >
         {icon}
         <span
